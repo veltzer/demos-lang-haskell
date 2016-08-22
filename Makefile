@@ -5,6 +5,7 @@ ALL:=$(ELF)
 
 .PHONY: all
 all: $(ALL)
+	@true
 
 .PHONY: debug
 debug:
