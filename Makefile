@@ -18,4 +18,5 @@ clean:
 
 # rules
 $(ELF): %.elf: %.hs
-	ghc -o $@ $<
+	$(info doing [$@])
+	@ghc -v0 -o $@ $<
