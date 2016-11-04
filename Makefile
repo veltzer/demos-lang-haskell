@@ -1,11 +1,16 @@
 # parameters
 SRC:=$(shell find . -name "*.hs")
 ELF:=$(addsuffix .elf,$(basename $(SRC)))
-ALL:=$(ELF)
+ALL:=tools.stamp $(ELF)
 
 .PHONY: all
 all: $(ALL)
 	@true
+
+tools.stamp: templardefs/deps.py
+	$(info doing [$@])
+	@templar_cmd install_deps
+	@make_helper touch-mkdir $@
 
 .PHONY: debug
 debug:
