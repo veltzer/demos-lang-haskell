@@ -7,9 +7,8 @@ ALL:=tools.stamp $(ELF)
 all: $(ALL)
 	@true
 
-tools.stamp: templardefs/deps.py
+tools.stamp: config/deps.py
 	$(info doing [$@])
-	@templar install_deps
 	@pymakehelper touch_mkdir $@
 
 .PHONY: debug
