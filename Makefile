@@ -35,6 +35,9 @@ debug:
 .PHONY: clean
 clean:
 	@rm -rf $(ALL)
+.PHONY: clean_hard
+clean_hard:
+	@git clean -qffxd
 
 # rules
 $(ELF): %.elf: %.hs
