@@ -1,7 +1,23 @@
-# parameters
+##############
+# parameters #
+##############
+DO_TOOLS:=1
+
+########
+# code #
+########
+ALL:=
+TOOLS=tools.stamp
 SRC:=$(shell find . -name "*.hs")
 ELF:=$(addsuffix .elf,$(basename $(SRC)))
-ALL:=tools.stamp $(ELF)
+
+# tools
+ifeq ($(DO_TOOLS),1)
+.EXTRA_PREREQS+=$(TOOLS)
+ALL+=$(TOOLS)
+endif # DO_TOOLS
+
+ALL+=$(ELF)
 
 .PHONY: all
 all: $(ALL)
