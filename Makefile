@@ -1,6 +1,7 @@
 ##############
 # parameters #
 ##############
+# do you want to do tools?
 DO_TOOLS:=1
 
 ########
