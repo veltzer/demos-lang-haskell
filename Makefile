@@ -26,7 +26,7 @@ all: $(ALL)
 
 tools.stamp: config/deps.py
 	$(info doing [$@])
-	@pymakehelper touch_mkdir $@
+	$(Q)pymakehelper touch_mkdir $@
 
 .PHONY: debug
 debug:
@@ -35,12 +35,12 @@ debug:
 	$(info ELF is $(ELF))
 .PHONY: clean
 clean:
-	@rm -rf $(ALL)
+	$(Q)rm -rf $(ALL)
 .PHONY: clean_hard
 clean_hard:
-	@git clean -qffxd
+	$(Q)git clean -qffxd
 
 # rules
 $(ELF): %.elf: %.hs
 	$(info doing [$@])
-	@ghc -v0 -o $@ $<
+	$(Q)ghc -v0 -o $@ $<
