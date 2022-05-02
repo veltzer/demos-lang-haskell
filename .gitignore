@@ -10,8 +10,7 @@ cabal-dev
 cabal.sandbox.config
 cabal.config
 *.elf
-/tools
-tools.stamp
 __pycache__
 *.pyo
 *.pyc
+*.stamp
