@@ -17,7 +17,7 @@ Q:=@
 endif # DO_MKDBG
 
 ALL:=
-SRC:=$(shell find . -name "*.hs")
+SRC:=$(shell find . -type f -and -name "*.hs")
 ELF:=$(addsuffix .elf,$(basename $(SRC)))
 
 ALL+=$(ELF)
