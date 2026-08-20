@@ -1,1 +1,18 @@
 # Repo-specific overlay. Deep-merged over the canonical rsconstruct.toml.
+
+# The Makefile compiled each *.hs into an executable with `ghc -v0 -o x.elf x.hs`.
+# The generator drives scripts/ghc_build.py, which does the same and points ghc's
+# .hi/.o intermediates at the output dir instead of the source tree.
+[processor.generator.haskell]
+command = "scripts/ghc_build.py"
+src_dirs = ["src"]
+src_extensions = [".hs"]
+output_dir = "out"
+output_extension = "elf"
+batch = false
+
+# ghc compiles the demos.
+[dependencies]
+system = [
+    "ghc",
+]
