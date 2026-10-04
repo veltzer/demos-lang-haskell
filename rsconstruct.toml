@@ -6,20 +6,20 @@ reject_dot_src_dirs = true
 
 [analyzer.python]
 
-[processor.ruff]
+[processor.checker.ruff]
 src_dirs = ["src", "scripts"]
 
 
-[processor.mypy]
+[processor.checker.mypy]
 src_dirs = ["src", "scripts"]
 
-[processor.taplo]
+[processor.checker.taplo]
 src_files = [".rumdl.toml", "pyproject.toml", "rsconstruct.toml"]
 
 # The Makefile compiled each *.hs into an executable with `ghc -v0 -o x.elf x.hs`.
 # The generator drives scripts/ghc_build.py, which does the same and points ghc's
 # .hi/.o intermediates at the output dir instead of the source tree.
-[processor.generator.haskell]
+[processor.generator.generic.haskell]
 command = "scripts/ghc_build.py"
 src_dirs = ["src"]
 src_extensions = [".hs"]
@@ -34,10 +34,10 @@ system = [
 ]
 
 # lint the GitHub Actions workflow files with actionlint
-[processor.actionlint]
+[processor.checker.actionlint]
 src_dirs = [".github/workflows"]
 
 # ─── markdown ────────────────────────────────────────────────────────────────
 
-[processor.rumdl]
+[processor.checker.rumdl]
 src_files = ["README.md"]
