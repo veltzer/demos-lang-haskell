@@ -18,7 +18,7 @@ src_files = [".rumdl.toml", "pyproject.toml", "rsconstruct.toml"]
 
 # The Makefile compiled each *.hs into an executable with `ghc -v0 -o x.elf x.hs`.
 # The generator drives scripts/ghc_build.py, which does the same and points ghc's
-# .hi/.o intermediates at the output dir instead of the source tree.
+# .hi/.o intermediates at a private temporary directory, out of the tree.
 [processor.generator.generic.haskell]
 command = "scripts/ghc_build.py"
 src_dirs = ["src"]
