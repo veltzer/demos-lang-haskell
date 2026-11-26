@@ -14,7 +14,7 @@ src_dirs = ["src", "scripts"]
 src_dirs = ["src", "scripts"]
 
 [processor.checker.taplo]
-src_files = [".rumdl.toml", "pyproject.toml", "rsconstruct.toml"]
+src_files = [".ruff.toml", ".rumdl.toml", "pyproject.toml", "rsconstruct.toml"]
 
 # The Makefile compiled each *.hs into an executable with `ghc -v0 -o x.elf x.hs`.
 # The generator drives scripts/ghc_build.py, which does the same and points ghc's
